@@ -33,7 +33,6 @@ class CreateWinnersTable extends Migration
         Schema::table('winners', function (Blueprint $table) {
                     $table->dropForeign('winner_game_id_foreign');
                     $table->dropForeign('winner_team_id_foreign');
-                    $table->dropForeign('winner_player_id_foreign');
                 });
 
         Schema::drop('winners');
