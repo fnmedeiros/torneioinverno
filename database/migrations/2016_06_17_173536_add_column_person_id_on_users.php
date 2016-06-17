@@ -29,7 +29,7 @@ class AddColumnPersonIdOnUsers extends Migration
                     $table->dropForeign('users_person_id_foreign');                    
                 });
         Schema::table('users', function ($table) {
-            $table->dropColumn('votes');
+            $table->dropColumn('person_id');
         });
     }
 }
