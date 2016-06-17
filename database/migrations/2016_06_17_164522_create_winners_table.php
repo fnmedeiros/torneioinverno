@@ -16,9 +16,9 @@ class CreateWinnersTable extends Migration
             $table->increments('id')->unsingned;
             $table->unsignedInteger('game_id');
             $table->foreign('game_id')->references('id')->on('games');
-            $table->unsignedInteger('team_id');
+            $table->unsignedInteger('team_id')->nullable;
             $table->foreign('team_id')->references('id')->on('teams');
-            $table->boolean('tie');
+            $table->boolean('tie')->nullable;
             $table->timestamps();
         });
     }
