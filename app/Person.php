@@ -4,6 +4,8 @@ namespace App;
 
 use App\Customers;
 use Illuminate\Database\Eloquent\Model;
+use App\Player;
+use App\User;
 
 class Person extends Model
 {
@@ -42,4 +44,14 @@ class Person extends Model
         'rg',
         'marital_status'
     ];
+
+    public function player()
+    {
+        return $this->hasOne('App\Player');
+    };
+
+    public function user()
+    {
+        return $this->hasOne('App\User');
+    };
 }

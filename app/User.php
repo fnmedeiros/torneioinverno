@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Comment;
+use App\Person;
 
 class User extends Authenticatable
 {
@@ -28,5 +29,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany('App\Comment');
+    };
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
     };
 }
