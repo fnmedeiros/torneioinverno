@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Comment;
 
 class Game extends Model
 {
@@ -17,4 +18,9 @@ class Game extends Model
 		'date',
 		'hour'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    };
 }
