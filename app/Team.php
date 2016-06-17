@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Game;
 
 class Team extends Model
 {
@@ -10,4 +12,9 @@ class Team extends Model
         'name',
         'points'
     ];
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class, 'games_teams','team_id', 'game_id');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Game;
 
 class Goal extends Model
 {
@@ -12,4 +13,9 @@ class Goal extends Model
 		'player_id',
 		'created_at'
     ];
+
+    public function game()
+    {
+        return $this->belongsTo('App\Game');
+    }
 }

@@ -3,7 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Comment;
+use App\Goal;
+use App\Winner;
+use App\Team
 
 class Game extends Model
 {
@@ -23,4 +27,19 @@ class Game extends Model
     {
         return $this->hasMany('App\Comment');
     };
+
+    public function goals()
+    {
+        return $this->hasMany('App\Goal');
+    };
+
+    public function winner()
+    {
+        return $this->hasOne('App\Winner');
+    };
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'games_teams', 'game_id', 'team_id');
+    }
 }

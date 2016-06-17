@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Game;
 
 class Winner extends Model
 {
@@ -11,4 +12,9 @@ class Winner extends Model
 		'team_id',
 		'tie'
     ];
+
+    public function game()
+    {
+        return $this->belongsTo('App\Game');
+    }
 }
