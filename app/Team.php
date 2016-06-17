@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Game;
 use App\Goal;
 use App\Player;
+use App\Winner;
 
 class Team extends Model
 {
@@ -28,5 +29,10 @@ class Team extends Model
     public function players()
     {
         return $this->hasMany('App\Player');
+    };
+
+    public function winners()
+    {
+        return $this->hasMany('App\Winner');
     };
 }
