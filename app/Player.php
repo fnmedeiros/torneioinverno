@@ -3,6 +3,7 @@
 namespace App;
 use App\Goal;
 use App\Person;
+use App\Team;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,5 +22,10 @@ class Player extends Model
     public function person()
     {
         return $this->belongsTo('App\Person');
+    };
+
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
     };
 }
