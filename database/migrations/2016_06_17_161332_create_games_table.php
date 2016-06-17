@@ -18,8 +18,8 @@ class CreateGamesTable extends Migration
             $table->date('end_first_time');
             $table->date('begin_second_time');
             $table->date('end_second_time');
-            $table->integer('extension');
-            $table->boolean('penalty');
+            $table->integer('extension')->nullable;
+            $table->boolean('penalty')->nullable;
             $table->date('date');
             $table->time('hour');
         });
